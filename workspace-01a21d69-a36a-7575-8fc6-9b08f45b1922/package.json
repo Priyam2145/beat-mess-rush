@@ -1,0 +1,29 @@
+{
+  "name": "beat-the-mess-rush",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i src/index.css -o build/tw.css --minify",
+    "build:js": "esbuild src/main.jsx --bundle --minify --format=iife --jsx=automatic --define:process.env.NODE_ENV='\"production\"' --outfile=build/app.js",
+    "build": "node scripts/build.mjs",
+    "dev": "esbuild src/main.jsx --bundle --format=iife --jsx=automatic --loader:.jsx=jsx --outfile=build/app.js --watch",
+    "deploy": "vercel deploy --prod --yes"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "LPU hostel mess queue & portion optimization prototype (React + Tailwind + Lucide)",
+  "dependencies": {
+    "esbuild": "^0.28.2",
+    "lucide-react": "^1.82.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwindcss": "^3.4.19"
+  },
+  "devDependencies": {
+    "playwright": "^1.65.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
